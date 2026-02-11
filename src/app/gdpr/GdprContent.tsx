@@ -18,30 +18,54 @@ export default function GdprContent() {
           Zásady ochrany osobných údajov
         </h1>
 
-        <div className="space-y-2 mb-10 text-gray-700">
-          <p>
-            <strong>AEB Digital s. r. o.</strong>
-          </p>
-          <p>IČO: 57 307 709</p>
-          <p>Konateľ: Peter Samuel Bobák</p>
-          <p>
-            E-mail:{" "}
-            <a
-              href="mailto:peter@aebdig.com"
-              className="text-primary hover:underline"
-            >
-              peter@aebdig.com
-            </a>
-          </p>
-          <p>
-            Tel.:{" "}
-            <a
-              href="tel:+421908507131"
-              className="text-primary hover:underline"
-            >
-              +421 908 507 131
-            </a>
-          </p>
+        <div className="space-y-4 mb-10 text-gray-700">
+          <div className="space-y-1">
+            <p><strong>VOSS AUTOSERVIS s.r.o.</strong></p>
+            <p>Sídlo firmy: Galvaniho 12B, Bratislava</p>
+            <p>
+              Tel:{" "}
+              <a href="tel:+421253635007" className="text-primary hover:underline">
+                02/53635007
+              </a>
+            </p>
+            <p>
+              Email:{" "}
+              <a href="mailto:info@vossautoservis.sk" className="text-primary hover:underline">
+                info@vossautoservis.sk
+              </a>
+            </p>
+          </div>
+
+          <div className="space-y-1">
+            <p><strong>Prevádzka:</strong> Galvaniho 12B, Bratislava</p>
+            <p><strong>Otváracie hodiny:</strong></p>
+            <p>Pondelok – piatok 7:30 – 16:00</p>
+            <p>Obedná prestávka: 12:00 – 12:30 hod</p>
+            <p>Sobota a Nedeľa: zatvorené</p>
+          </div>
+
+          <div className="space-y-1">
+            <p><strong>Vedenie spoločnosti:</strong></p>
+            <p>Radoslav Repiský</p>
+            <p>
+              Tel:{" "}
+              <a href="tel:+421905428656" className="text-primary hover:underline">
+                0905 428 656
+              </a>
+            </p>
+            <p>
+              Email:{" "}
+              <a href="mailto:r.repisky@gmail.com" className="text-primary hover:underline">
+                r.repisky@gmail.com
+              </a>
+            </p>
+          </div>
+
+          <div className="space-y-1 text-sm text-gray-500">
+            <p>Spoločnosť je zapísaná v OR SR Bratislava I., oddiel Sro, vložka 100092/B</p>
+            <p>IČO: 47 816 406, DIČ: 20 24 12 89 75</p>
+            <p>IČ DPH: SK 20 24 12 89 75</p>
+          </div>
         </div>
 
         <p className="text-gray-600 mb-10 leading-relaxed">
