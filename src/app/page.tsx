@@ -14,12 +14,14 @@ import Footer from "@/components/Footer";
 import CookiePopup from "@/components/CookiePopup";
 import CookieSettings from "@/components/CookieSettings";
 import SmoothScroll from "@/components/SmoothScroll";
+import StructuredData from "@/components/StructuredData";
 
 export default function Home() {
   const [cookieSettingsOpen, setCookieSettingsOpen] = useState(false);
 
   return (
     <>
+      <StructuredData />
       <SmoothScroll />
       <Header />
       <main>
