@@ -48,9 +48,10 @@ export async function POST(request: Request) {
     if (data.data?.succeeded > 0) {
       return NextResponse.json({ success: true });
     } else {
-      console.error("SMTP2GO error:", data);
+      console.error("SMTP2GO error:", JSON.stringify(data));
+      const detail = data.data?.error || data.data?.failures?.[0] || JSON.stringify(data);
       return NextResponse.json(
-        { error: "Nepodarilo sa odoslať správu. Skúste neskôr." },
+        { error: "Nepodarilo sa odoslať správu. Skúste neskôr.", detail },
         { status: 500 }
       );
     }
