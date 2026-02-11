@@ -10,13 +10,51 @@ export default function ContactForm() {
     message: "",
     gdpr: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setForm({ name: "", phone: "", email: "", message: "", gdpr: false });
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("success");
+        setForm({ name: "", phone: "", email: "", message: "", gdpr: false });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setErrorMsg(data.error || "Nepodarilo sa odoslať správu.");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Nastala chyba. Skúste neskôr.");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
+  };
+
+  const buttonText = {
+    idle: "Odoslať",
+    sending: "Odosiela sa...",
+    success: "Odoslané!",
+    error: "Chyba",
   };
 
   return (
@@ -76,11 +114,22 @@ export default function ContactForm() {
             </span>
           </label>
 
+          {status === "error" && errorMsg && (
+            <p className="text-red-300 text-sm">{errorMsg}</p>
+          )}
+
+          {status === "success" && (
+            <p className="text-green-300 text-sm">
+              Správa bola úspešne odoslaná. Budeme Vás kontaktovať.
+            </p>
+          )}
+
           <button
             type="submit"
-            className="border-2 border-white text-white font-bold uppercase px-12 py-4 text-sm tracking-widest hover:bg-white hover:text-primary transition-all duration-300 cursor-pointer"
+            disabled={status === "sending"}
+            className="border-2 border-white text-white font-bold uppercase px-12 py-4 text-sm tracking-widest hover:bg-white hover:text-primary transition-all duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {submitted ? "Odoslané!" : "Odoslať"}
+            {buttonText[status]}
           </button>
         </form>
       </div>
