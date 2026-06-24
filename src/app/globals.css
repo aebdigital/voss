@@ -53,6 +53,16 @@ body {
   animation: scroll-left 40s linear infinite;
 }
 
+@media (max-width: 767px) {
+  .animate-scroll-left {
+    animation-duration: 18s;
+  }
+
+  .animate-scroll-left-slow {
+    animation-duration: 16s;
+  }
+}
+
 /* Gallery lightbox */
 .lightbox-overlay {
   animation: fadeIn 0.2s ease-out;

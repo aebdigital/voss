@@ -17,16 +17,18 @@ export default function InsurancePartners() {
   return (
     <section id="poistne" className="py-20 px-4 bg-gray-bg shadow-[0_8px_24px_-4px_rgba(0,0,0,0.1)]">
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="section-heading mb-12">Zmluvní partneri</h2>
+        <h2 className="section-heading leading-[0.9] mb-6 md:leading-normal md:mb-12">
+          Zmluvní partneri
+        </h2>
 
         {/* Slider container */}
         <div className="overflow-hidden">
-          <div className="flex animate-scroll-left-slow hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-scroll-left-slow hover:[animation-play-state:paused]">
             {/* Double the items for seamless loop */}
             {[...partners, ...partners].map((partner, i) => (
               <div
                 key={`${partner.alt}-${i}`}
-                className="flex-shrink-0 w-[180px] mx-6 flex items-center justify-center h-20"
+                className="flex-shrink-0 w-[140px] mx-2 md:w-[180px] md:mx-6 flex items-center justify-center h-20"
               >
                 <Image
                   src={partner.src}

@@ -11,6 +11,7 @@ const partners = [
     src: "/Mercedes-Logo.svg.png",
     alt: "HEDIN AUTOMOTIVE",
   },
+  { src: "/tesla.svg", alt: "Tesla Center Bratislava" },
   { src: "/partneri/hyundai.png", alt: "Hyundai" },
   { src: "/partneri/kia.jpg", alt: "Kia" },
   { src: "/partneri/mercedes.png", alt: "Mercedes" },
@@ -24,11 +25,11 @@ export default function Partners() {
 
         {/* Slider container */}
         <div className="overflow-hidden">
-          <div className="flex animate-scroll-left hover:[animation-play-state:paused]">
+          <div className="flex w-max animate-scroll-left hover:[animation-play-state:paused]">
             {[...partners, ...partners].map((partner, i) => (
               <div
                 key={`${partner.alt}-${i}`}
-                className="flex-shrink-0 w-[250px] mx-10 flex flex-col items-center justify-center gap-4"
+                className="flex-shrink-0 w-[180px] mx-2 md:w-[250px] md:mx-10 flex flex-col items-center justify-center gap-4"
               >
                 <div className="relative w-36 h-36 flex items-center justify-center">
                   <Image
