@@ -7,7 +7,10 @@ const partners = [
   { src: "/partneri/toyota.png", alt: "Autogrand Toyota" },
   { src: "/partneri/porsche.png", alt: "Porsche" },
   { src: "/partneri/posrchedolonzemska.png", alt: "Porsche Dolnozemská" },
-  { src: "/partneri/honda.png", alt: "Honda" },
+  {
+    src: "/Mercedes-Logo.svg.png",
+    alt: "HEDIN AUTOMOTIVE",
+  },
   { src: "/partneri/hyundai.png", alt: "Hyundai" },
   { src: "/partneri/kia.jpg", alt: "Kia" },
   { src: "/partneri/mercedes.png", alt: "Mercedes" },
