@@ -3,14 +3,14 @@
 import Image from "next/image";
 
 const partners = [
-  { src: "/poistovne/csob-poistovna.png", alt: "ČSOB Poisťovňa" },
-  { src: "/poistovne/wustenrot.png", alt: "Wüstenrot" },
-  { src: "/poistovne/uniqua.png", alt: "UNIQA" },
-  { src: "/poistovne/kooperativa.png", alt: "Kooperatíva" },
-  { src: "/poistovne/generali.png", alt: "Generali" },
-  { src: "/poistovne/allianz.png", alt: "Allianz" },
-  { src: "/poistovne/union.png", alt: "Union" },
-  { src: "/poistovne/komunalna-poistovna.png", alt: "Komunálna poisťovňa" },
+  { src: "/poistovne-color/csob-poistovna.png", alt: "ČSOB Poisťovňa" },
+  { src: "/poistovne-color/wustenrot.png", alt: "Wüstenrot" },
+  { src: "/poistovne-color/uniqua.png", alt: "UNIQA" },
+  { src: "/poistovne-color/kooperativa.png", alt: "Kooperatíva" },
+  { src: "/poistovne-color/generali.png", alt: "Generali" },
+  { src: "/poistovne-color/allianz.png", alt: "Allianz" },
+  { src: "/poistovne-color/union.png", alt: "Union" },
+  { src: "/poistovne-color/komunalna-poistovna.png", alt: "Komunálna poisťovňa" },
 ];
 
 export default function InsurancePartners() {
@@ -35,7 +35,7 @@ export default function InsurancePartners() {
                   alt={partner.alt}
                   width={150}
                   height={60}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300 max-h-14"
+                  className="object-contain max-h-14"
                 />
               </div>
             ))}

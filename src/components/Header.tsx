@@ -24,7 +24,7 @@ export default function Header() {
             alt="VOSS Autoservis"
             width={140}
             height={50}
-            className="h-12 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-contain"
             priority
           />
         </Link>
